@@ -1,0 +1,7 @@
+import networkx
+G = networkx.Graph()
+G.add_edges_from([(0, 1), (0, 2), (0, 3)])
+G.add_edges_from([(1, 4), (2, 5), (3, 6)])
+centrality = networkx.eigenvector_centrality(G)
+for node in sorted(centrality):
+    print(f"Узел {node}: {centrality[node]:.4f}")
