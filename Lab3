@@ -1,0 +1,10 @@
+import networkx as nx
+n = 25
+p = 0.9
+G = nx.erdos_renyi_graph(n, p)
+degrees = dict(G.degree())
+mean_degree_empirical = sum(degrees.values()) / n
+mean_degree_theoretical = p * (n - 1)
+print(f"Теоретическая средняя степень вершины: {mean_degree_theoretical:.2f}")
+print(f"Эмпирическая средняя степень вершины: {mean_degree_empirical:.2f}")
+print(f"Разница: {abs(mean_degree_empirical - mean_degree_theoretical):.2f}")
